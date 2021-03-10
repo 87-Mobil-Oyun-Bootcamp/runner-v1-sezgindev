@@ -26,10 +26,6 @@ public class PlayerAnimController : MonoBehaviour
             {
                 _playerAnimator.SetBool(_isRunning, true);
             }
-       
-            
-            
-            
         }
     }
 }

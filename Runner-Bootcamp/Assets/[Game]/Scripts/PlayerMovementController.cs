@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+   [SerializeField] private Transform _playerTransform;
+   [SerializeField] private PlayerSettings _playerSettings;
+   private bool _isRunning;
+    void LateUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+           _playerTransform.position += Vector3.forward * (_playerSettings.Speed * Time.deltaTime);    
+        }
+                                                                                                                                                    
     }
 }
