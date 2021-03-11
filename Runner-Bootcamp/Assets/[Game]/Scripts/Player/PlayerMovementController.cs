@@ -33,4 +33,11 @@ public class PlayerMovementController : MonoBehaviour
        EventManager.PlayerRunning?.Invoke(_isRunning);
   
    }
+
+   private void OnTriggerEnter(Collider  other)
+   {
+     
+       ICollectable obj = other.GetComponent<ICollectable>();
+       obj?.Interact();
+   }
 }

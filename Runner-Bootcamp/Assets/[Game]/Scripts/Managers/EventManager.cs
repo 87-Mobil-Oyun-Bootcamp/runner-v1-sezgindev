@@ -7,5 +7,6 @@ public static class EventManager
 {
     public static Action GameStarted;
     public static Action<bool> PlayerRunning;
+    public static Action AddCoin;
 
 }

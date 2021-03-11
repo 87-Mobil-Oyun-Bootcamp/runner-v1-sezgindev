@@ -6,6 +6,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private bool _isGameStarted;
+    public static int CoinAmount;
+
+    private void Start()
+    {
+        CoinAmount = 0;
+    }
+
     private void Update()
     {
         if (!_isGameStarted)
