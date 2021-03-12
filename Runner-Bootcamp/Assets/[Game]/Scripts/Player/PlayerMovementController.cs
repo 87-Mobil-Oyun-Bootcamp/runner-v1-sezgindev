@@ -29,6 +29,7 @@ public class PlayerMovementController : MonoBehaviour
 
    private void StartRunning()
    {
+       _playerSettings.Speed = 2.3f;
        _isRunning = true;
        EventManager.PlayerRunning?.Invoke(_isRunning);
   
@@ -36,7 +37,6 @@ public class PlayerMovementController : MonoBehaviour
 
    private void OnTriggerEnter(Collider  other)
    {
-     
        ICollectable obj = other.GetComponent<ICollectable>();
        obj?.Interact();
    }
