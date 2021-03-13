@@ -8,8 +8,9 @@ public class PlayerMovementController : MonoBehaviour
 {
    [SerializeField] private Transform _playerTransform;
    [SerializeField] private PlayerSettings _playerSettings;
+   [SerializeField] private float _swerveSpeed=3.0f;
    private bool _isRunning;
-
+   [SerializeField] private InputManager _inputManager;
 
    private void OnEnable()
    {
@@ -21,11 +22,18 @@ public class PlayerMovementController : MonoBehaviour
        EventManager.GameStarted -= StartRunning;
    }
 
+
+
    private void Update()
    {
-       if (!_isRunning) return;
-       _playerTransform.position += Vector3.forward * (_playerSettings.Speed * Time.deltaTime);    
-    }
+       if (_isRunning)
+       {
+         //  _playerTransform.position += ;
+           float swerveAmount = Time.deltaTime*_swerveSpeed*_inputManager.MoveFactorX;
+           transform.Translate( swerveAmount,0,(_playerSettings.Speed * Time.deltaTime));
+       }
+   
+   }
 
    private void StartRunning()
    {
