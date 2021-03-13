@@ -3236,8 +3236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerTransform: {fileID: 1591673792}
   _playerSettings: {fileID: 11400000, guid: a39752299440db64abd7b3e36a092c7d, type: 2}
-  _swerveSpeed: 0
+  _swerveSpeed: 1
   _inputManager: {fileID: 2115427993}
+  _maxSwerveAmount: 1
 --- !u!54 &1591673795
 Rigidbody:
   m_ObjectHideFlags: 0

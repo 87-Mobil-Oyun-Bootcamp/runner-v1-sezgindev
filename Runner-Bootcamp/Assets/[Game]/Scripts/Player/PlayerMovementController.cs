@@ -11,7 +11,7 @@ public class PlayerMovementController : MonoBehaviour
    [SerializeField] private float _swerveSpeed=3.0f;
    private bool _isRunning;
    [SerializeField] private InputManager _inputManager;
-
+   [SerializeField] private float _maxSwerveAmount=4.25f;
    private void OnEnable()
    {
        EventManager.GameStarted += StartRunning;
@@ -27,10 +27,13 @@ public class PlayerMovementController : MonoBehaviour
    private void Update()
    {
        if (_isRunning)
-       {
-         //  _playerTransform.position += ;
+       {  
            float swerveAmount = Time.deltaTime*_swerveSpeed*_inputManager.MoveFactorX;
+           var transformPosition = transform.position;
+           transformPosition.x = Mathf.Clamp(transformPosition.x, -_maxSwerveAmount, _maxSwerveAmount);
+           transform.position = transformPosition;
            transform.Translate( swerveAmount,0,(_playerSettings.Speed * Time.deltaTime));
+          
        }
    
    }
