@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: PlaterSettingsObject
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSettings
-  _speed: 2.3
+  _speed: 0

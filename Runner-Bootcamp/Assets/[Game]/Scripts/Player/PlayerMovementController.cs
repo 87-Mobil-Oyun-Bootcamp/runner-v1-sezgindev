@@ -40,7 +40,7 @@ public class PlayerMovementController : MonoBehaviour
 
    private void StartRunning()
    {
-       _playerSettings.Speed = 2.3f;
+       _playerSettings.Speed = 5.0f;
        _isRunning = true;
        EventManager.PlayerRunning?.Invoke(_isRunning);
   
